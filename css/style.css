@@ -1,0 +1,65 @@
+h1 {
+    text-align: center;
+    font-size: 3rem;
+     border: 2px solid #8B0000;
+     border-left: none;
+     border-right: none;
+     padding: 20px;
+     margin: 0 287px;
+     font-family: 'Oswald', sans-serif; 
+}
+
+h2{
+    font-size: 32px;
+}
+.image{
+    text-align: center;
+}
+.image2 {
+    text-align: center;
+    
+}
+
+h2, h3 {
+    text-align: center;
+}
+h3 {
+    color: #8B0000;
+    font-size: 2rem;
+}
+
+p {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+/*.ligne {
+    border-top:  solid ; 
+    border: 2 px solid #000;
+    display: inline-block ;
+    border: 2px solid #530008;
+     border-left: none;
+     border-right: none;
+     padding: 25px;
+    margin-left: -10px;  Raccourcir le trait à gauche 
+    margin-right: -10px; Raccourcir le trait à droite 
+}*/
+
+
+.opacite {
+    background-color:#EEEEEE;
+border-top:1px solid #aeb8de;
+padding: 3rem; /* Ajustez cette valeur selon vos besoins */
+margin: 0 536px;
+
+}
+
+footer{
+    background-color:#EEEEEE;
+    border-top:1px solid #aeb8de;
+    padding: 3rem; /* Ajustez cette valeur selon vos besoins */
+    margin: 30px 426px;
+       
+}
