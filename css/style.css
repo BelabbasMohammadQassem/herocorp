@@ -1,78 +1,191 @@
-body{
+/* on charge la police dans le navigateur de l'utilisateur oswald depuis notre dossier font : en local !! */
+@font-face {
+    font-family: 'Oswald';
+    src: url(../font/Oswald-Regular.otf);
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Oswald';
+    src: url(../font/Oswald-Bold.otf);
+    font-weight: 700;
+  }
+  
+  
+  body {
     background-color: #D3D3D3;
-}
-.container {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+  }
+  
+  .container {
     background-color: #FFF;
     border: 1px solid black;
+  
+    /* on veut que notre container soit moins large que son parent le body : on lui change sa witdh */
     width: 80%;
-    width: 80 wv;
-    margin: 1rem 10%;
-
-
-}
-h1 {
+    width: 80vw; /* 1vw represente 1% de la largeur du viewport (la fenetre du navigateur) or 80% represente 80% du parent qui est le body qui fait la taille du viewport donc 80vw ou 80% c'est pareil dans notre cas */
+  
+    /* on centre le container : autant de marge à droite qu'à gauche , avec auto il va dispatcher les 20% restant à droite et à gauche */
+    margin: 1rem auto;
+  
+    /* le container a un espace entre sa bordure et son contenu : le padding */
+    padding: 1rem;
+  }
+  
+  header {
+    /* centrer tous les elements qui sont inline */
     text-align: center;
-    font-size: 3rem;
-     border: 2px solid #8B0000;
-     border-left: none;
-     border-right: none;
-     padding: 20px;
-     margin: 0 287px;
-     font-family: 'Oswald', sans-serif; 
-}
-
-h2{
-    font-size: 32px;
-}
-
-.image{
+  }
+  
+  h1, h2, h3, h4 {
+    /* on utilise la font précédement importée en haut du fichier css avec la syntaxe @import */
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 1em;
     text-align: center;
-}
-
-.image2 {
-    text-align: center;
-    
-}
-
-h2, h3 {
-    text-align: center;
-}
-
-h3 {
-    color: #8B0000;
+    font-weight: bold;
+  }
+  
+  h1 {
+    /* mettre des lignes bordeau au dessus et en dessous : border-top et bottom */
+    border-top: 2px solid rgb(116 11 11);
+    border-bottom: 2px solid rgb(116 11 11);
+  
+    /* espacement entre le texte et la border : le padding */
+    padding: 1rem;
+  
+    /* on ecrit en gras et gros */
     font-size: 2rem;
-}
-
-p {
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+    color: darkred;
+  }
+  
+  /* les 3 sections on du margin et padding */
+  section {
+    margin: 0 5rem;
+    padding: 1rem;
+  }
+  
+  /* les 2 premieres section ont un fond gris */
+  .section_presentation, .section_synopsis {
+    background-color: #EEEEEE;
+  }
+  
+  /* tous les paragraphes ont un espace en dessous d'eux */
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  /* le aside est centré et en italic */
+  aside {
     text-align: center;
-}
-
-footer {
-    text-align: center;
-}
-
-.ligne1{
-    font-size: 18px;
-}
-
-.ligne{
     font-style: italic;
-    font-size: 16px;
-}
-
-
-.opacite {
-    background-color:#EEEEEE;
-border-top:1px solid #aeb8de;
-padding: 3rem; /* Ajustez cette valeur selon vos besoins */
-margin: 0 536px;
-
-}
-
-footer{
-    background-color:#EEEEEE;
-    border-top:1px solid #aeb8de;
-    padding: 3rem; /* Ajustez cette valeur selon vos besoins */
-    margin: 30px 426px;
-       
-}
+    border-top: 1px solid black;
+    padding-top: 1rem;
+    font-size: 0.9em;
+  }
+  
+  .logoVideHTMLremplienCSS {
+    /* cette image n'existe pas dans le html : elle sera invisible pour lereferencement et l'accessibilité : on met en CSS les images qui n'ont pas de sens qui ne sont que de la déco et on met en balise img les images importantes pour le sens */
+    /* background-image: url(../images/hc-logo.png);
+    background-size: contain;
+    width: 150px;
+    height: 100px; */
+  }
+  
+  /* on regle la largeur de l'image, elle va garder ses proportions, la hauteur sera réduite aussi */
+  .logo_small {
+    width: 100px;
+    height: 180px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  
+    /* on va faire flotter le logo à droite, il ne prendra plus sa place dans le flu normal du document */
+    float: right;
+  }
+  
+  h1 button {
+    /* le style du span qui est dans le h1 */
+    background-color: black;
+    padding: 0.5rem 1rem;
+    color: #FFF;
+    font-size: 1rem;
+  
+    /* si on utilise une balise button au lieu de span, il faut virer le style par defaut des bouton donc la bordure moche car le reset ne le fait pas ! */
+    border: none;
+    font-family: 'Oswald', sans-serif;
+  }
+  
+  footer {
+    background-color: #EEEEEE;
+    /* on veut des padding diffrent entre le haut et le bas et le bord */
+    /* padding: top right bottom left */
+    padding: 1rem 1rem 4rem 1rem;
+    text-align: center;
+  }
+  
+  /*  style des liens */
+  li a {
+    /* on met le lien en display bloc pour qu'il occupe toute la largeur du LI */
+    display: block;
+  
+    text-align: center;
+    color: darkred;
+    /* uppercase met tous les caractères en majuscule */
+    text-transform: uppercase;
+    background-color: #EEE;
+    border-radius: 2em;
+    margin-bottom:0.3rem;
+    padding: 0.1em;
+    font-size: 0.9rem;
+  }
+  
+  /* style des liens quand ils sont survolés */
+  li a:hover {
+    background-color: darkred;
+    color: #EEE
+  }
+  
+  /* ::before va ajouter un faux element html : un pseudo element devant chaque li */
+  li::before {
+    /* on veut ajouter un coeur ou un mot "pour la deco" devant les li */
+    /* content: "❤️"; */
+  }
+  
+  li::after {
+    /* on veut ajouter un coeur ou un mot "pour la deco" devant les li */
+    /* content: "💀"; */
+  }
+  
+  .article-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly
+  }
+  
+  article {
+    /* display inline :: le bloc ne prendra plus une ligne entiere et la largeur ne peux plus etre reglée donc il prendra la taille du contenu don con a mit l'img à 150px pour que le contenu soit petit */
+  
+    /* inline bloc : le bloc prend sa largeur 200px, mais pas toute la ligne  */
+    width: 150px;
+    min-height: 250px; 
+  
+    border: 1px solid #CCC;
+    padding: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  
+  article img {
+    /* les images qui sont dans les bloc articles font en largeur 100% du bloc article */
+    width: 100%;
+    height: 100px;
+  }
